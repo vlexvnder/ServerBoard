@@ -8,6 +8,8 @@ def hello_world():
     return 'Hello, World!'
 @api.route('/create')
 class create(Resource)
+    def get(self)
     
+
 if __name__ == "__main__"
     app.run()
