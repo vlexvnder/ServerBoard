@@ -17,10 +17,12 @@ def createContainer(app_name):
         call('mkdir '+install_path, shell=True)
 
     with open(install_path+'/docker-compose.yml', "w") as f:
-            f.write(containers['app_name']['compose_file'])
+        with open(containers[app_name]['compose_file'], 'w') as c:
+            f.write(c)
 
     with Path(install_path) as p:
+            working_dir = Path().absolute
             os.chdir(p)
             call('docker-compose up -d', shell=True)
-            os.chdir(config['app_path'])
+            os.chdir(working_dir)
 createContainer("Heimdall")
