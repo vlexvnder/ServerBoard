@@ -1,6 +1,5 @@
 from pathlib import Path
 import os
-import shutil
 from subprocess import call
 import json
 
@@ -25,4 +24,3 @@ def createContainer(app_name):
             os.chdir(p)
             call('docker-compose up -d', shell=True)
             os.chdir(working_dir)
-createContainer("Heimdall")
