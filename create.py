@@ -19,7 +19,7 @@ def createContainer(app_name):
 
     with open(install_path+'/docker-compose.yml', "w") as f:
         with open(containers[app_name]['compose_file'], 'w') as c:
-            shutil.copyfileobj(c, f)
+            f.write(c.read())
 
     with Path(install_path) as p:
             working_dir = Path().absolute
