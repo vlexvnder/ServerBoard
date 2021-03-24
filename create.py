@@ -17,7 +17,7 @@ def createContainer(app_name):
     if(not Path(install_path).exists()):
         call('mkdir '+install_path, shell=True)
 
-    call('/bin/cp '+install_path+'/docker-compose.yml '+containers[app_name]['compose_file'], shell=True)
+    call('/bin/cp '+containers[app_name]['compose_file']+' '+install_path+'/docker-compose.yml ', shell=True)
 
 
     with Path(install_path) as p:
