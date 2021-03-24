@@ -1,5 +1,6 @@
 from pathlib import Path
 import os
+import shutil
 from subprocess import call
 import json
 
@@ -18,7 +19,7 @@ def createContainer(app_name):
 
     with open(install_path+'/docker-compose.yml', "w") as f:
         with open(containers[app_name]['compose_file'], 'w') as c:
-            f.write(c)
+            shutil.copyfileobj(c, f)
 
     with Path(install_path) as p:
             working_dir = Path().absolute
