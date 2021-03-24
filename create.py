@@ -21,7 +21,7 @@ def createContainer(app_name):
 
 
     with Path(install_path) as p:
-            working_dir = Path().absolute
+            working_dir = Path().absolute()
             os.chdir(p)
             call('docker-compose up -d', shell=True)
             os.chdir(working_dir)
