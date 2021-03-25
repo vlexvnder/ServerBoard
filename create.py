@@ -2,11 +2,13 @@ from pathlib import Path
 import os
 from subprocess import call
 import json
+import docker
 
 with open('config.json') as f:
     config = json.load(f)
 with open('containers.json') as c:
     containers = json.load(c)
+client = docker.from_env()
  
 def createContainer(app_name):
     global config
@@ -24,3 +26,7 @@ def createContainer(app_name):
             os.chdir(p)
             call('docker-compose up -d', shell=True)
             os.chdir(working_dir)
+def deleteContainer(id):
+    global client
+    container = client.containers.get(id)
+    container.remove(force=True)
