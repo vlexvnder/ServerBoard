@@ -8,7 +8,7 @@ api = Api(app)
 def hello_world():
     return 'Hello, World!'
 @api.route('/create')
-class create(Resource)
+class create(Resource):
     def post(self):
         createContainer(request.form['name'])
         return 200
