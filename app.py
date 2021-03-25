@@ -1,6 +1,6 @@
 from flask import Flask, request
 from flask_restplus import Resource, Api
-from create import createContainer
+from manager import createContainer, deleteContainer
 app = Flask(__name__)
 api = Api(app)
 
@@ -11,6 +11,11 @@ def hello_world():
 class create(Resource):
     def post(self):
         createContainer(request.form['name'])
+        return 200
+@api.route('/remove')
+class remove(Resource):
+    def post(self):
+        deleteContainer(request.form['id'])
         return 200
 
         
