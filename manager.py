@@ -10,7 +10,7 @@ with open('containers.json') as c:
     containers = json.load(c)
 client = docker.from_env()
  
-def createContainer(app_name):
+def compose(app_name):
     global config
     global containers
     install_path = config['install_path'] + app_name
@@ -26,6 +26,7 @@ def createContainer(app_name):
             os.chdir(p)
             call('docker-compose up -d', shell=True)
             os.chdir(working_dir)
+            
 def deleteContainer(id):
     global client
     container = client.containers.get(id)
