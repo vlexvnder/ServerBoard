@@ -1,6 +1,6 @@
 from flask import Flask, request
 from flask_restplus import Resource, Api
-from manager import compose, deleteContainer
+from manager import compose, deleteCompose
 
 app = Flask(__name__)
 api = Api(app)
@@ -18,7 +18,7 @@ class create(Resource):
 @api.route('/remove')
 class remove(Resource):
     def post(self):
-        deleteContainer(request.form['id'])
+        deleteCompose(request.form['id'])
         return 200
 
 if __name__ == "__main__":
