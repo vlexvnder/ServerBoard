@@ -1,0 +1,14 @@
+version: "2"
+services:
+  code-server:
+    image: linuxserver/code-server:version-v3.9.1
+    container_name: code-server
+    restart: unless-stopped
+    environment:
+      - TZ=Europe/London # Specify a timezone to use EG Europe/London
+      - PUID=1000 # for UserID
+      - PGID=1000 # for GroupID
+    volumes:
+      - ./config:/config # Contains all relevant configuration files.
+    ports:
+      - 8443:8443/tcp # Web UI

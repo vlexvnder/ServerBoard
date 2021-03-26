@@ -5,5 +5,12 @@
         "source":"Linuxserver.io",
         "Github Link":"https://github.com/linuxserver/Heimdall",
         "service_names":["heimdall"]
+    },
+    "Code-Server":{
+        "compose_file":"containers/code-server.yml",
+        "info": "A remote IDE",
+        "source":"Linuxserver.io",
+        "Github Link":"https://github.com/cdr/code-server",
+        "service_names":["code-server"]  
     }
 }

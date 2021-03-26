@@ -18,7 +18,7 @@ class create(Resource):
 @api.route('/remove')
 class remove(Resource):
     def post(self):
-        deleteCompose(request.form['id'])
+        deleteCompose(request.form['name'])
         return 200
 
 if __name__ == "__main__":
