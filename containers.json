@@ -3,6 +3,7 @@
         "compose_file":"containers/Heimdall.yml",
         "info": "A dashboard app",
         "source":"Linuxserver.io",
-        "Github Link":"https://github.com/linuxserver/Heimdall"
+        "Github Link":"https://github.com/linuxserver/Heimdall",
+        "service_names":["heimdall"]
     }
 }

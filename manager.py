@@ -6,8 +6,10 @@ import docker
 
 with open('config.json') as f:
     config = json.load(f)
+
 with open('containers.json') as c:
     containers = json.load(c)
+
 client = docker.from_env()
  
 def compose(app_name):
@@ -31,3 +33,8 @@ def deleteContainer(id):
     global client
     container = client.containers.get(id)
     container.remove(force=True)
+
+def deleteCompose(name):
+    global containers
+    for n in containers[name]["service_names"]:
+        deleteContainer(n)
