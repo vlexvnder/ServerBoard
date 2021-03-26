@@ -1,12 +1,12 @@
 {
-    "Heimdall":{
+    "heimdall":{
         "compose_file":"containers/Heimdall.yml",
         "info": "A dashboard app",
         "source":"Linuxserver.io",
         "Github Link":"https://github.com/linuxserver/Heimdall",
         "service_names":["heimdall"]
     },
-    "Code-Server":{
+    "code-server":{
         "compose_file":"containers/code-server.yml",
         "info": "A remote IDE",
         "source":"Linuxserver.io",
