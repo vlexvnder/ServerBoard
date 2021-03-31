@@ -1,5 +1,5 @@
 from flask import Flask, request
-from apis import blueprint as api
+from backend.apis import blueprint as api
 from client.client import client
 
 app = Flask(__name__)
