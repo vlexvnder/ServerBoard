@@ -4,10 +4,13 @@ from subprocess import call
 import json
 import docker
 
-with open('config.json') as f:
+config_file_path = 'config/config.json'
+container_file_path = 'config/containers.json'
+
+with open(config_file_path) as f:
     config = json.load(f)
 
-with open('containers.json') as c:
+with open(container_file_path) as c:
     containers = json.load(c)
 
 client = docker.from_env()
