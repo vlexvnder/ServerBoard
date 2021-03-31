@@ -1,4 +1,5 @@
 {
     "install_path":"/usr/local/bin/ServerBoard/",
-    "app_path" : "/workspace/ServerBoard"
+    "app_path" : "/workspace/ServerBoard",
+    "app_ip" : "0.0.0.0"
 }
