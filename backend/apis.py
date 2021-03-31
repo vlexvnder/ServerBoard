@@ -1,6 +1,6 @@
 from flask import Blueprint, request
 from flask_restplus import Resource, Api
-from manager import compose, deleteCompose
+from .manager import compose, deleteCompose
 
 blueprint = Blueprint('api', __name__)
 api = Api(blueprint)
