@@ -29,9 +29,9 @@ def compose(app_name):
             call('docker-compose up -d', shell=True)
             os.chdir(working_dir)
             
-def deleteContainer(id):
+def deleteContainer(name):
     global client
-    container = client.containers.get(id)
+    container = client.containers.get(name)
     container.remove(force=True)
 
 def deleteCompose(name):
