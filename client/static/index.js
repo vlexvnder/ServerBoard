@@ -1,7 +1,9 @@
-const vue = new Vue({ 
-    el: '#vue',
+const app = { 
     delimiters: ['[[', ']]'],
-    data: {
-        hi: 'Hello, Vue!'
+    data() {
+        return ({
+          hi: 'Hello, Vue!'
+    })
     }
-})
+}
+Vue.createApp(app).mount('#app')
