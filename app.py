@@ -3,7 +3,7 @@ from manager import compose, deleteCompose
 from apis import blueprint as api
 
 app = Flask(__name__)
-app.register_blueprint('api', url_prefix='/api/')
+app.register_blueprint(api, url_prefix='/api')
 
 @app.route('/')
 def hello_world():
