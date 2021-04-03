@@ -1,11 +1,18 @@
 <head>
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw==" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" />
 </head>
 
 <body>
     <div id="app">
-        <p>[[ hi ]] </p>
+        <div class="ui three column doubling stackable grid container">
+            <div class="column"  v-for="service in available_services">
+               <service s= [[ service ]]></service>
+                
+            </div>
+        </div>  
     </div>
 <script src="{{ url_for('client.static', filename='index.js') }}"></script>
 </body>
