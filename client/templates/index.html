@@ -4,29 +4,29 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw==" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" />
 </head>
-
+<script>console.log(getContainers("{{ url_for('config', filename='containers.json') }}"))</script>
 <body>
+
+    <h1 class="ui center aligned header">Server Board</h1>
+
     <div id="app">
+
         <div class="ui three column doubling stackable grid container">
-            <div class="column"  v-for="service in available_services">
+            <div class="column"  v-for="service in running_services">
+
                <div class="ui card">
                     <div class="content">
-                        <div  class="header">
-                        [[ service.name ]]
-                        </div>
+                        <div  class="header">[[ service.name ]]</div>
                         <div class="meta">[[ service.status ]]</div>
                         <div class="description">
-                        <p>
-                            [[ service.info ]]
-                        </p>
+                        <p>[[ service.info ]]</p>
                         </div>
-                    </div>
-
-                    
+                    </div>     
                 </div>
                 
             </div>
-        </div>  
+        </div> 
+
     </div>
 <script src="{{ url_for('client.static', filename='index.js') }}"></script>
 </body>

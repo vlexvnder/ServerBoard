@@ -1,8 +1,16 @@
+
+function getContainers(url) {
+var containers;
+fetch( url )
+  .then(response => response.json())
+  .then(json => containers = json)
+  .then(console.log(containers));
+}
 const app = { 
     delimiters: ['[[', ']]'],
     data() {
         return ({
-          available_services : [
+          running_services : [
               {
                   name: "Heimdall",
                   status: "Online",
@@ -12,7 +20,7 @@ const app = {
               {name: "app3"},
               {name: "app4"}
           ],
-          running_services : []
+          available_services : []
 
     })
     }
