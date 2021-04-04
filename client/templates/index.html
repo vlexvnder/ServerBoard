@@ -9,7 +9,21 @@
     <div id="app">
         <div class="ui three column doubling stackable grid container">
             <div class="column"  v-for="service in available_services">
-               <service s= [[ service ]]></service>
+               <div class="ui card">
+                    <div class="content">
+                        <div  class="header">
+                        [[ service.name ]]
+                        </div>
+                        <div class="meta">[[ service.status ]]</div>
+                        <div class="description">
+                        <p>
+                            [[ service.info ]]
+                        </p>
+                        </div>
+                    </div>
+
+                    
+                </div>
                 
             </div>
         </div>  
