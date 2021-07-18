@@ -16,8 +16,6 @@ with open(container_file_path) as c:
 client = docker.from_env()
  
 def compose(app_name):
-    global config
-    global containers
     install_path = config['install_path'] + app_name
 
     if(not Path(install_path).exists()):
@@ -33,11 +31,9 @@ def compose(app_name):
             os.chdir(working_dir)
             
 def deleteContainer(name):
-    global client
     container = client.containers.get(name)
     container.remove(force=True)
 
 def deleteCompose(name):
-    global containers
     for n in containers[name]["service_names"]:
         deleteContainer(n)
