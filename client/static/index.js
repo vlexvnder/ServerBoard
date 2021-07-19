@@ -1,3 +1,4 @@
+import axios from 'axios';
 
 function getContainers(url) {
 var containers;
@@ -10,19 +11,16 @@ const app = {
     delimiters: ['[[', ']]'],
     data() {
         return ({
-          running_services : [
-              {
-                  name: "Heimdall",
-                  status: "Online",
-                  info: "A remote IDE",
-                },
-              {name: "Code-Server"},
-              {name: "app3"},
-              {name: "app4"}
-          ],
-          available_services : []
+          running_services : null,
+          available_services : [{name: "Code-Server"},
+            {name: "app3"},
+            {name: "app4"}]
 
     })
+    },
+    async created() {
+      const response = await axios.get("/api/getServices");
+      running_services = response.data
     }
 }
 
