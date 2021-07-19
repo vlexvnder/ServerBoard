@@ -1,10 +1,16 @@
 from flask import Blueprint, request
 from flask_restx import Resource, Api
-from .manager import compose, deleteCompose
+from .manager import compose, deleteCompose, getOnlineServices
 from .ilo_manager import pushPower
+import json
 
 blueprint = Blueprint('api', __name__)
 api = Api(blueprint)
+
+@api.route('/getServices')
+class create(Resource):
+    def get(self):
+        return json.dumps(getOnlineServices())
 
 @api.route('/create')
 class create(Resource):
