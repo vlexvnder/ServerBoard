@@ -12,7 +12,7 @@ const app = {
     },
     async created() {
       const response = await fetch( "/api/getServices" );
-      this.running_services = response.json();
+      this.running_services = await response.json();
     }
 }
 
