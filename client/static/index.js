@@ -16,7 +16,8 @@ const app = {
             "Content-Type": "application/x-www-form-urlencoded"
           },
           method: "POST"});
-      }
+          window.location.reload();
+        }
     },
     async created() {
       const response = await fetch( "/api/getServices" );
