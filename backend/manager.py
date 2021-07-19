@@ -34,7 +34,7 @@ def compose(app_name):
         json.dump(containers, c)
 
 def getOnlineServices():
-    return [service for service in containers if service["online"] == True]
+    return [service for service in containers.values() if service["online"] == True]
 
 def deleteContainer(name):
     container = client.containers.get(name)
