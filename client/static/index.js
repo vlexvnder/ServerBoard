@@ -10,12 +10,12 @@ const app = {
     methods : {
       postData : async function(url, name){
         const response = await fetch(url, {
-          method: 'POST',
+          body: "name="+name,
           headers: {
-            'Content-Type': 'application/json'
+            Accept: "application/json",
+            "Content-Type": "application/x-www-form-urlencoded"
           },
-          body: new FormData().append("name", name)
-        });
+          method: "POST"});
       }
     },
     async created() {
