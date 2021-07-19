@@ -5,7 +5,7 @@ from client.client import client
 
 app = Flask(__name__)
 
-SECRET_KEY = b'1$\xfbs\x88\xaf\xd3\xf7;\xb0v\x97Xe\x19\xa6'
+SECRET_KEY = "no this is not my actual key"
 
 app.register_blueprint(api, url_prefix='/api')
 app.register_blueprint(client, url_prefix='/')

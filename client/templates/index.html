@@ -4,7 +4,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw==" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" />
 </head>
-<script>console.log(getContainers("{{ url_for('config', filename='containers.json') }}"))</script>
 <body>
 
     <h1 class="ui center aligned header">Server Board</h1>
@@ -17,16 +16,24 @@
                <div class="ui card">
                     <div class="content">
                         <div  class="header">[[ service.name ]]</div>
-                        <div class="meta">[[ service.status ]]</div>
+                        <div v-if= "service.online == true" class="meta">Online</div>
+                        <div v-else class="meta">Offline</div>
                         <div class="description">
-                        <p>[[ service.info ]]</p>
+                        <p>[[ service.info ]]. Find more info <a v-bind:href="service.github_link">here</a></p>
                         </div>
+                        <button v-if="service.online == false " v-on:click="postData('/api/create', service.name)" class="ui primary button">
+                            Create
+                        </button>
+                        <button v-else v-on:click="postData('/api/remove', service.name)" class="ui button">
+                            Delete
+                        </button>
                     </div>     
                 </div>
                 
             </div>
         </div> 
-
+        <div class="ui center aligned container"><a href="/api/pushPower"><button class="negative ui button">Power</button></a></div>
+        
     </div>
 <script src="{{ url_for('client.static', filename='index.js') }}"></script>
 </body>

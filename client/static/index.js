@@ -1,28 +1,27 @@
 
-function getContainers(url) {
-var containers;
-fetch( url )
-  .then(response => response.json())
-  .then(json => containers = json)
-  .then(console.log(containers));
-}
 const app = { 
     delimiters: ['[[', ']]'],
     data() {
         return ({
-          running_services : [
-              {
-                  name: "Heimdall",
-                  status: "Online",
-                  info: "A remote IDE",
-                },
-              {name: "Code-Server"},
-              {name: "app3"},
-              {name: "app4"}
-          ],
-          available_services : []
+          running_services : null,
 
     })
+    },
+    methods : {
+      postData : async function(url, name){
+        const response = await fetch(url, {
+          body: "name="+name,
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/x-www-form-urlencoded"
+          },
+          method: "POST"});
+          window.location.reload();
+        }
+    },
+    async created() {
+      const response = await fetch( "/api/getServices" );
+      this.running_services = await response.json();
     }
 }
 

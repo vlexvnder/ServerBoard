@@ -1,16 +1,20 @@
 {
     "heimdall":{
+        "name" : "heimdall",
         "compose_file":"compose_files/Heimdall.yml",
         "info": "A dashboard app",
         "source":"Linuxserver.io",
-        "Github Link":"https://github.com/linuxserver/Heimdall",
-        "service_names":["heimdall"]
+        "github_link":"https://github.com/linuxserver/Heimdall",
+        "service_names":["heimdall"],
+        "online": false
     },
     "code-server":{
+        "name" : "code-server",
         "compose_file":"compose_files/code-server.yml",
         "info": "A remote IDE",
         "source":"Linuxserver.io",
-        "Github Link":"https://github.com/cdr/code-server",
-        "service_names":["code-server"]  
+        "github_link":"https://github.com/cdr/code-server",
+        "service_names":["code-server"],
+        "online": false  
     }
 }
