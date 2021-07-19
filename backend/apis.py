@@ -10,7 +10,7 @@ api = Api(blueprint)
 @api.route('/getServices')
 class create(Resource):
     def get(self):
-        return getOnlineServices().join(getOfflineServices)
+        return getOnlineServices() + getOfflineServices()
 
 @api.route('/create')
 class create(Resource):
