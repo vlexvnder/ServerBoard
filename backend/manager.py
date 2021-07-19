@@ -30,7 +30,7 @@ def compose(app_name):
             call('docker-compose up -d', shell=True)
             os.chdir(working_dir)
     containers[app_name]["online"] = True
-    with open(container_file_path) as c:
+    with open(container_file_path, 'w') as c:
         json.dump(containers, c)
 
 def getOnlineServices():
@@ -44,5 +44,5 @@ def deleteCompose(app_name):
     for n in containers[app_name]["service_names"]:
         deleteContainer(n)
     containers[app_name]["online"] = False
-    with open(container_file_path) as c:
+    with open(container_file_path, 'w') as c:
         json.dump(containers, c)
