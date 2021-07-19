@@ -35,7 +35,8 @@ def compose(app_name):
 
 def getOnlineServices():
     return [service for service in containers.values() if service["online"] == True]
-
+def getOfflineServices():
+    return [service for service in containers.values() if service["online"] != True]
 def deleteContainer(name):
     container = client.containers.get(name)
     container.remove(force=True)
