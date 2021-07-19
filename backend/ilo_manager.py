@@ -14,6 +14,7 @@ def pushPower():
     REST_OBJ = redfish.LegacyRestClient(base_url=ip, username=user, password=password)
     REST_OBJ.login(auth="session")
     response = REST_OBJ.post("/redfish/v1/Systems/1/Actions/ComputerSystem.Reset/", {'ResetType': 'PushPowerButton'})
+    print(response)
     try:
         REST_OBJ.logout()
     except:
