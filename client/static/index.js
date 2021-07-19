@@ -8,7 +8,7 @@ const app = {
     })
     },
     methods : {
-      async postData(url, name){
+      postData : async function(url, name){
         const response = await fetch(url, {
           method: 'POST',
           headers: {
