@@ -1,6 +1,6 @@
 {
     "heimdall":{
-        "name" : "Heimdall",
+        "name" : "heimdall",
         "compose_file":"compose_files/Heimdall.yml",
         "info": "A dashboard app",
         "source":"Linuxserver.io",
@@ -9,7 +9,7 @@
         "online": false
     },
     "code-server":{
-        "name" : "Code Server",
+        "name" : "code-server",
         "compose_file":"compose_files/code-server.yml",
         "info": "A remote IDE",
         "source":"Linuxserver.io",

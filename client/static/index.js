@@ -4,11 +4,19 @@ const app = {
     data() {
         return ({
           running_services : null,
-          available_services : [{name: "Code-Server"},
-            {name: "app3"},
-            {name: "app4"}]
 
     })
+    },
+    methods : {
+      async postData(url, name){
+        const response = await fetch(url, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: 'name='+name
+        });
+      }
     },
     async created() {
       const response = await fetch( "/api/getServices" );

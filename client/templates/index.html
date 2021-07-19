@@ -21,10 +21,10 @@
                         <div class="description">
                         <p>[[ service.info ]]</p>
                         </div>
-                        <button v-if= "service.online == false " class="ui primary button">
+                        <button v-if="service.online == false " v-on:click="postData('/api/create', service.name)" class="ui primary button">
                             Create
                         </button>
-                        <button v-else class="ui button">
+                        <button v-else v-on:click="postData('/api/remove', service.name)" class="ui button">
                             Delete
                         </button>
                     </div>     
