@@ -19,7 +19,7 @@
                         <div v-if= "service.online == true" class="meta">Online</div>
                         <div v-else class="meta">Offline</div>
                         <div class="description">
-                        <p>[[ service.info ]]. Find more info <a :to="service.github_link">here</a></p>
+                        <p>[[ service.info ]]. Find more info <a v-bind:href="service.github_link">here</a></p>
                         </div>
                         <button v-if="service.online == false " v-on:click="postData('/api/create', service.name)" class="ui primary button">
                             Create
