@@ -16,8 +16,8 @@
                <div class="ui card">
                     <div class="content">
                         <div  class="header">[[ service.name ]]</div>
-                        <div class="meta">[[ service.online ]]</div>
-                    
+                        <div v-if= "service.online == true" class="meta">Online</div>
+                        <h1 v-else>Offline</h1>
                         <div class="description">
                         <p>[[ service.info ]]</p>
                         </div>
