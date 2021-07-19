@@ -14,7 +14,7 @@ const app = {
           headers: {
             'Content-Type': 'application/json'
           },
-          body: 'name='+name
+          body: {"name": name}
         });
       }
     },
