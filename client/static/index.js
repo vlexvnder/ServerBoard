@@ -14,7 +14,7 @@ const app = {
           headers: {
             'Content-Type': 'application/json'
           },
-          body: new FormData().append("name", name);
+          body: new FormData().append("name", name)
         });
       }
     },
