@@ -1,5 +1,5 @@
 from flask import Blueprint, request
-from flask_restplus import Resource, Api
+from flask_restx import Resource, Api
 from .manager import compose, deleteCompose
 from .ilo_manager import pushPower
 

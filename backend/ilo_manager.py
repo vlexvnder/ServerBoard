@@ -1,4 +1,5 @@
 import redfish
+import json
 
 config_file_path = 'config/config.json'
 with open(config_file_path) as f:
